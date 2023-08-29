@@ -1,18 +1,19 @@
 version: '3.8'
 services:
   clientdashboard:
-    image: clientdashboard
-    command: sh -c "npm install && npm start"
+    build:
+      context: ./clientdashboard
     ports:
-      - 3004:3000
+      - "3004:3000"
   newsapp:
-    image: newsapp
-    command: sh -c "npm install && npm run dev"
+    build:
+      context: ./News-App-firebase
     ports:
-      - 3005:3000
+      - "3005:3000"
   nodejs:
-    image: nodejs
-    command: sh -c "npm install && node server.js"
+    build:
+      context: ./JWT
     ports:
-      - 3010:3001
+      - "3010:3001"
+
 

@@ -1,4 +1,2 @@
-services:
-  api:
-    image: node:18-alpine
+
     
